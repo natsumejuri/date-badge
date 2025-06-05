@@ -21,7 +21,7 @@ jobs:
           DAYS_SINCE=$(( ( $(date -ud "$TODAY" +%s) - $(date -ud "$START_DATE" +%s) ) / 86400 ))
 
           mkdir -p output
-          echo "{\"schemaVersion\": 1, \"label\": \"elapsed\", \"message\": \"$DAYS_SINCE days\", \"color\": \"blue\"}" > output/badge.json
+          echo "{\"schemaVersion\": 1, \"label\": \"HRT\", \"message\": \"$DAYS_SINCE days\", \"color\": \"Pink\"}" > output/badge.json
 
       - name: Commit and push
         run: |
