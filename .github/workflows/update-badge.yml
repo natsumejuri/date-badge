@@ -15,8 +15,8 @@ jobs:
 
       - name: Calculate days and generate badge
         run: |
-          # 起始日期（修改这里即可）
-          START_DATE="2024-01-01"
+
+          START_DATE="2024-9-11"
           TODAY=$(date -u +%Y-%m-%d)
           DAYS_SINCE=$(( ( $(date -ud "$TODAY" +%s) - $(date -ud "$START_DATE" +%s) ) / 86400 ))
 
