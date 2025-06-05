@@ -21,12 +21,9 @@ jobs:
           DAYS_SINCE=$(( ( $(date -ud "$TODAY" +%s) - $(date -ud "$START_DATE" +%s) ) / 86400 ))
 
           mkdir -p output
-          BADGE_SVG="<svg xmlns='http://www.w3.org/2000/svg' width='400' height='80'>
-          <rect width='100%' height='100%' fill='pink'/>
-          <text x='10' y='25' font-size='20' fill='black'>HRT: $DAYS_SINCE days</text>
-          </svg>"
+          
+          echo "{\"schemaVersion\": 1, \"label\": \"HRT\", \"message\": \"$DAYS_SINCE days\", \"color\": \"pink\"}" > output/badge.json
 
-          echo "$BADGE_SVG" > output/badge.svg
 
       - name: Commit and push
         run: |
